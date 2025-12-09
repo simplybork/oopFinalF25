@@ -1,73 +1,108 @@
-# oopFinalF25
+Here’s a polished **README.txt** you can include with your project. It explains what your program does, how to install dependencies, and how to run it so anyone can access and use your code:
 
-<!--
-README.md for F1 Lap Time Analyzer
--->
+---
 
-# F1 Lap Time Analyzer
-
-<!-- A lightweight Formula 1 analytics tool built with FastF1, pandas, and matplotlib.  
-This script compares two drivers’ average qualifying lap times using real F1 telemetry data. >
+# 🏎️ F1 Lap Time Dashboard
 
 ## Overview
+This project is an interactive dashboard for analyzing Formula 1 lap times.  
+It uses the **FastF1** library to fetch official F1 session data, processes it with **pandas**, and visualizes results using **matplotlib** and **Streamlit**.  
 
-<! F1 Lap Time Analyzer pulls official Formula 1 session data via the FastF1 API, processes it with pandas, and visualizes the results using matplotlib. This is an example of how data analytics and visualization can be applied to motorsport performance analysis. >
+With this dashboard, you can:
+- Compare average lap times between two drivers in a selected session.
+- Visualize lap time comparisons with bar charts and line charts.
+- Download results as CSV files for further analysis.
 
-<! Pandas is a Python library for organizing, analyzing, and manipulating data. It’s used to handle tables of information (like spreadsheets) — cleaning data, calculating statistics, and preparing it for visualization.>
+---
 
-<! Matplotlib is a Python library for creating graphs and charts. It helps turn data into visual insights, such as bar charts or line graphs, making patterns and comparisons easy to see.>
+## Requirements
+The project depends on the following Python libraries:
+- `fastf1`
+- `pandas`
+- `matplotlib`
+- `streamlit`
 
+These are listed in `requirements.txt`.
 
+---
 
-### Key Features
-<!-- 
-- Real-time F1 data retrieval using FastF1
-- Data cleaning and aggregation with pandas
-- Visual storytelling through matplotlib
--->
+## Installation & Setup
 
-## Example Usage
+1. **Clone or download the project folder**  
+   Place the files (`f1_analyzer.py`, `dashboard.py`, `requirements.txt`, `readme.txt`) in a directory of your choice.
 
-```bash
-$ python f1_lap_analysis.py
-F1 Lap Time Analyzer
-# This demo compares two drivers in a qualifying session.
-# A bar chart will appear showing both drivers’ average lap times.
+2. **Create a virtual environment (recommended)**  
+   - On macOS/Linux:
+     ```bash
+     python3 -m venv .venv
+     source .venv/bin/activate
+     ```
+   - On Windows:
+     ```bash
+     python -m venv .venv
+     .venv\Scripts\activate
+     ```
 
-## Installation
-#F1 Lap Time Analyzer requires Python 3.9+ and an internet connection (FastF1 downloads session data on first run).
-```bash
-# Create and activate a virtual environment
-python -m venv .venv
+3. **Install dependencies**  
+   Run:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-# Windows
-.venv\Scripts\activate
+---
 
-# macOS/Linux
-source .venv/bin/activate
+## Running the Program
 
-# Install dependencies
-pip install -r requirements.txt
+1. Make sure your virtual environment is activated.
+2. Run the Streamlit app:
+   ```bash
+   streamlit run dashboard.py
+   ```
+3. A local server will start, and Streamlit will open the dashboard in your browser (usually at `http://localhost:8501`).
 
-##Run Instructions
-python f1_lap_analysis.py
+---
 
+## Usage Instructions
 
-## Future Work
-# Planned extensions include:
-# - Sector-by-sector split and best-lap delta analysis
-# - Tyre compound tracking and stint pace evolution
-# - Interactive dashboards using Plotly or Streamlit
-# - Multi-race performance trend comparisons
+1. In the **sidebar**, select:
+   - Year (e.g., 2024)
+   - Grand Prix name (e.g., Monaco, Bahrain, Italy)
+   - Session type (`Q` = Qualifying, `R` = Race, `FP1–FP3` = Practice sessions)
 
+2. Enter two driver codes (e.g., `VER`, `LEC`, `HAM`).
 
+3. Click **"Load session and compare"**:
+   - The dashboard will display a table of average lap times.
+   - A bar chart will compare the two drivers.
+   - Line charts will show per-lap times for each driver.
+   - You can download the averages as a CSV file.
 
+---
 
-# About
+## File Structure
+```
+F1Dashboard/
+│── f1_analyzer.py      # Core class for loading and analyzing F1 data
+│── dashboard.py        # Streamlit UI for interactive dashboard
+│── requirements.txt    # List of dependencies
+│── readme.txt          # Instructions (this file)
+```
 
-# F1 Lap Time Analyzer
-# Developed by Khushi Anumalla; Rutgers University
-# 2025 Khushi Anumalla · For educational use only
+---
 
-# Topics
-# python • data-analytics • formula-1 • fastf1 • pandas • matplotlib • motorsport-data
+## Troubleshooting
+- **Grand Prix spelling matters**: Use official GP names (e.g., "Monaco", "Bahrain").
+- **First run may take longer**: FastF1 downloads session data and caches it in `.fastf1cache`.
+- **Driver codes must be valid**: Use official three-letter codes (VER, LEC, HAM, etc.).
+- If you see errors about missing packages, re-run:
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+---
+
+## Future Enhancements
+- Dropdowns for Grand Prix and driver codes (to avoid manual typing).
+- Telemetry plots (speed, throttle, braking).
+- Multi-driver comparisons (more than two drivers).
+- Dark/light theme toggle.
