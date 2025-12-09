@@ -1,7 +1,3 @@
-Here’s a polished **README.txt** you can include with your project. It explains what your program does, how to install dependencies, and how to run it so anyone can access and use your code:
-
----
-
 # 🏎️ F1 Lap Time Dashboard
 
 ## Overview
@@ -13,7 +9,7 @@ With this dashboard, you can:
 - Visualize lap time comparisons with bar charts and line charts.
 - Download results as CSV files for further analysis.
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Requirements
 The project depends on the following Python libraries:
@@ -24,7 +20,7 @@ The project depends on the following Python libraries:
 
 These are listed in `requirements.txt`.
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Installation & Setup
 
@@ -40,16 +36,18 @@ These are listed in `requirements.txt`.
    - On Windows:
      ```bash
      python -m venv .venv
-     .venv\Scripts\activate
+     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+     .\venv\Scripts\Activate.ps1
      ```
 
 3. **Install dependencies**  
    Run:
    ```bash
+   pip install fastf1 pandas matplotlib streamlit
    pip install -r requirements.txt
    ```
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Running the Program
 
@@ -60,7 +58,7 @@ These are listed in `requirements.txt`.
    ```
 3. A local server will start, and Streamlit will open the dashboard in your browser (usually at `http://localhost:8501`).
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Usage Instructions
 
@@ -77,7 +75,7 @@ These are listed in `requirements.txt`.
    - Line charts will show per-lap times for each driver.
    - You can download the averages as a CSV file.
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## File Structure
 ```
@@ -88,7 +86,7 @@ F1Dashboard/
 │── readme.txt          # Instructions (this file)
 ```
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Troubleshooting
 - **Grand Prix spelling matters**: Use official GP names (e.g., "Monaco", "Bahrain").
@@ -98,11 +96,3 @@ F1Dashboard/
   ```bash
   pip install -r requirements.txt
   ```
-
----
-
-## Future Enhancements
-- Dropdowns for Grand Prix and driver codes (to avoid manual typing).
-- Telemetry plots (speed, throttle, braking).
-- Multi-driver comparisons (more than two drivers).
-- Dark/light theme toggle.
