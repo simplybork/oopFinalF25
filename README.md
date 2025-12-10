@@ -40,7 +40,7 @@ These are listed in `requirements.txt`.
      .\venv\Scripts\Activate.ps1
      ```
 
-3. **Install dependencies**  
+3. **Install Dependencies**  
    Run:
    ```bash
    pip install fastf1 pandas matplotlib streamlit
